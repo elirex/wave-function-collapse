@@ -16,13 +16,12 @@
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.material.Button
-import androidx.compose.material.Text
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 
@@ -30,14 +29,33 @@ import androidx.compose.ui.window.application
 @Composable
 @Preview
 fun App() {
-
-    var text by remember { mutableStateOf("Hello, World!") }
-
     MaterialTheme {
-        Button(onClick = {
-            text = "Hello, Desktop!"
-        }) {
-            Text(text)
+        Row {
+            Image(
+                bitmap = Tiles.blank,
+                contentDescription = "blank",
+                modifier = Modifier.padding(1.dp)
+            )
+            Image(
+                bitmap = Tiles.up,
+                contentDescription = "up",
+                modifier = Modifier.padding(1.dp)
+            )
+            Image(
+                bitmap = Tiles.down,
+                contentDescription = "down",
+                modifier = Modifier.padding(1.dp)
+            )
+            Image(
+                bitmap = Tiles.left,
+                contentDescription = "left",
+                modifier = Modifier.padding(1.dp)
+            )
+            Image(
+                bitmap = Tiles.right,
+                contentDescription = "right",
+                modifier = Modifier.padding(1.dp)
+            )
         }
     }
 }
